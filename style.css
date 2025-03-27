@@ -6,12 +6,14 @@
 }
 body {
   background-color: #fdbf00;
+  text-align: center;
 }
 .card {
-  width: 740px;
+  width: 90%;
+  max-width: 740px;
   height: 500px;
   position: absolute;
-  margin: 80px;
+  margin: 80px auto;
   left: 0;
   right: 0;
   top: 0;
@@ -26,8 +28,7 @@ body {
 .card:hover .outside {
   transform: rotateY(-130deg);
 }
-.outside,
-.inside {
+.outside, .inside {
   height: 100%;
   width: 50%;
   position: absolute;
@@ -36,7 +37,7 @@ body {
 .inside {
   background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
   line-height: 3;
-  padding: 0 20px;
+  padding: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -52,8 +53,7 @@ body {
   transition: 2s;
   cursor: pointer;
 }
-.front,
-.back {
+.front, .back {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -68,39 +68,70 @@ body {
   transform: rotateY(180deg);
   background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
 }
-
 .cake {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   bottom: 80px;
   left: 55%;
-  transform: translateX(-50%) rotate(-30deg); /* Rotate the moon slightly anticlockwise */
+  transform: translateX(-50%) rotate(-30deg);
   border-radius: 50%;
-  box-shadow: inset 50px 0 0 0 #fdbf00; /* Create a thinner crescent shape */
+  box-shadow: inset 50px 0 0 0 #fdbf00;
 }
-
 .cake:before {
   content: '';
   position: absolute;
   top: 0;
   left: 40%;
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
-
-
 .outside p {
-  font-size: 23px;
+  font-size: 18px;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   color: #000046;
 }
 .inside h1 {
-  font-size: 120px;
-  line-height: 120px;
+  font-size: 100px;
+  line-height: 100px;
 }
 
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #000046;
+  background-color: #e7e7e7;
+}
+.italic {
+  font-style: italic;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 768px) {
+  .card {
+      width: 90%;
+      height: 400px;
+  }
+  .inside p {
+      font-size: 14px;
+  }
+  .inside h1 {
+      font-size: 80px;
+  }
+  .cake {
+      width: 120px;
+      height: 120px;
+  }
+  .outside p {
+      font-size: 14px;
+      letter-spacing: 3px;
+  }
+}
